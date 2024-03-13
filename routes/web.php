@@ -46,5 +46,9 @@ Route::delete('/sale-details/{id}', [SaleDetailController::class, 'destroy'])->n
 Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
 Route::get('/sales/{id}', [SaleController::class, 'show'])->name('sales.show');
 //Route::get('/sales/create', [SaleController::class, 'create'])->name('sales.create');
+Route::get('/sales/{id}/edit', [SaleController::class, 'edit'])->name('sales.edit');
+Route::put('/sales/{id}', [SaleController::class, 'update'])->name('sales.update');
+Route::delete('/sales/{id}', [SaleController::class, 'destroy'])->name('sales.destroy');
 Route::get('/salesCreate', [SaleController::class, 'create'])->name('sales.create');
 Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
+Route::get('/salesdownload-pdf', [SaleController::class, 'downloadPDF'])->name('sales.downloadPDF');
