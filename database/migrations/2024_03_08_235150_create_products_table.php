@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->text('description');
             $table->decimal('price', 10, 2);
-            // Add other relevant columns as needed
+            // **Se agregan otras columnas relevantes según sea necesario**
             $table->timestamps();
         });
     }

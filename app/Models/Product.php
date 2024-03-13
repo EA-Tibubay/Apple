@@ -16,8 +16,8 @@ class Product extends Model
         'price',
     ];
 	
-	public function sales(): HasMany
-    {
-        return $this->hasMany(SaleDetail::class);
-    }
+	public function saleDetails(): HasMany
+	{
+		return $this->hasMany(SaleDetail::class);
+	}
 }

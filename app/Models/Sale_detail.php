@@ -10,13 +10,22 @@ class Sale_detail extends Model
 {
     use HasFactory;
 	
-	public function sale(): BelongsTo
-    {
-        return $this->belongsTo(Sale::class);
-    }
+	protected $fillable = [
+        'product_id',
+		'quantity',
+        'unit_price',
+        // Otros campos según tus necesidades
+    ];
+	
+	// En el modelo SaleDetail.php
+	public function product(): BelongsTo
+	{
+		return $this->belongsTo(Product::class);
+	}
 
-    public function product(): BelongsTo
-    {
-        return $this->belongsTo(Product::class);
-    }
+	public function sale(): BelongsTo
+	{
+		return $this->belongsTo(Sale::class);
+	}
+
 }

@@ -18,15 +18,12 @@ class CreateSalesTable extends Migration
             $table->date('sale_date');
             $table->decimal('total_amount', 10, 2);
             $table->enum('payment_method', ['credit_card', 'cash']);
-
-	        $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('sale_details_id');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+			
+            $table->unsignedBigInteger('sale_details_id'); // **Se modifica el nombre de la columna**
             $table->foreign('sale_details_id')->references('id')->on('sale_details')->onDelete('cascade');
-           
+           	
 	        $table->timestamps();
         });
-
     }
 
     /**

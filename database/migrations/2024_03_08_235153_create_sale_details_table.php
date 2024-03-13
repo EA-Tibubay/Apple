@@ -15,9 +15,12 @@ class CreateSaleDetailsTable extends Migration
     {
         Schema::create('sale_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_id'); // **Se asegura de que la línea esté presente**
             $table->integer('quantity');
             $table->decimal('unit_price', 10, 2);
-            // Add other relevant columns as needed
+
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

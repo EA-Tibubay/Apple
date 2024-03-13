@@ -18,4 +18,5 @@ class SaleDetailController extends Controller
         $saleDetail = Sale_detail::findOrFail($id);
         return view('sale_details.show', compact('saleDetail'));
     }
+	
 }
